@@ -10,4 +10,11 @@ export default class Cart {
     get items(): Buyable[] {
         return [...this._items]; 
     }
+
+    totalPrice(): number {
+        const list = this._items as Array<any>
+        return list.reduce((previous, current) => {
+            return previous.price + current.price;
+        });
+    }
 }

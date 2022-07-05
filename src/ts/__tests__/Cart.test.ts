@@ -1,12 +1,12 @@
 import Cart from '../service/Cart';
 import Movie from '../domain/Movie';
+import Book from '../domain/Book';
 
 test('new card should be empty', () => {
   const cart = new Cart();
 
   expect(cart.items.length).toBe(0);
 });
-
 
 test('adding movie to cart', () => {
   const cart = new Cart();
@@ -23,4 +23,11 @@ test('adding movie to cart', () => {
     duration: '137 мин. / 02:17',
     price: 1000,
   })
+})
+
+test('total price checking', () => {
+  const cart = new Cart();
+  cart.add(new Book(1, 'Idiot', 'F. Dostoevsky', 1500, 650));
+  cart.add(new Book(2, 'Revizor', 'N. Gogol', 1000, 500));
+  expect(cart.totalPrice()).toBe(2500);
 })
