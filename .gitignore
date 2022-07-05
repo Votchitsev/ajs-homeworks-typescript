@@ -81,3 +81,7 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+src/ts/domain/*js
+src/ts/service/*js
+src/ts/*js
