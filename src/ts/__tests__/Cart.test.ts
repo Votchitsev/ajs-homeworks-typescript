@@ -38,3 +38,11 @@ test('total discount price check', () => {
   cart.add(new Book(2, 'Revizor', 'N. Gogol', 1000, 500));
   expect(cart.totalPriceWithDiscount(5)).toBe(2375);
 })
+
+test('delete item checking', () => {
+  const cart = new Cart();
+  cart.add(new Book(1, 'Idiot', 'F. Dostoevsky', 1500, 650));
+  cart.add(new Book(2, 'Revizor', 'N. Gogol', 1000, 500));
+  cart.delete(1);  
+  expect(cart.items.length).toBe(1);
+})

@@ -21,4 +21,11 @@ export default class Cart {
     totalPriceWithDiscount(discount: number): number {
         return this.totalPrice() * (1 - discount/100);
     }
+
+    delete(id: number): void {
+        const item = this._items.filter(item => {
+            return item.id === id;
+        })
+        this._items.splice(this._items.indexOf(item as any));
+    }
 }
