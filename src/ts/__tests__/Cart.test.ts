@@ -31,3 +31,10 @@ test('total price checking', () => {
   cart.add(new Book(2, 'Revizor', 'N. Gogol', 1000, 500));
   expect(cart.totalPrice()).toBe(2500);
 })
+
+test('total discount price check', () => {
+  const cart = new Cart();
+  cart.add(new Book(1, 'Idiot', 'F. Dostoevsky', 1500, 650));
+  cart.add(new Book(2, 'Revizor', 'N. Gogol', 1000, 500));
+  expect(cart.totalPriceWithDiscount(5)).toBe(2375);
+})

@@ -17,4 +17,8 @@ export default class Cart {
             return previous.price + current.price;
         });
     }
+
+    totalPriceWithDiscount(discount: number): number {
+        return this.totalPrice() * (1 - discount/100);
+    }
 }
